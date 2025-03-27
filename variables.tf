@@ -55,9 +55,14 @@ variable "proxmox_worker_vm_disk_size" {
 }
 
 variable "proxmox_network_vlan_id" {
-    description = "Proxmo network VLAN ID"
+    description = "Proxmox network VLAN ID"
     type        = number
     default     = null
+}
+variable "proxmox_network_bridge" {
+  description = "Proxmox network Bridge"
+  type = string
+  default = "vmbr0"
 }
 
 variable "talos_cluster_name" {
