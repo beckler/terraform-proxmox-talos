@@ -11,7 +11,7 @@ locals {
 }
 
 resource "proxmox_virtual_environment_download_file" "talos_image" {
-  content_type = "iso"
+  content_type = "images"
   datastore_id = var.proxmox_iso_datastore
   node_name    = values(var.control_nodes)[0]
   url          = "https://factory.talos.dev/image/${var.talos_schematic_id}/v${var.talos_version}/nocloud-${var.talos_arch}.qcow2"
