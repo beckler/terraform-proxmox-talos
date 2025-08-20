@@ -35,7 +35,7 @@ resource "proxmox_virtual_environment_vm" "talos_control_vm" {
   }
   disk {
     datastore_id = var.proxmox_image_datastore
-    file_id      = proxmox_virtual_environment_download_file.talos_image.id
+    import_from  = proxmox_virtual_environment_download_file.talos_image.id
     interface    = "virtio0"
     iothread     = true
     discard      = "on"
@@ -67,7 +67,7 @@ resource "proxmox_virtual_environment_vm" "talos_worker_vm" {
   }
   disk {
     datastore_id = var.proxmox_image_datastore
-    file_id      = proxmox_virtual_environment_download_file.talos_image.id
+    import_from  = proxmox_virtual_environment_download_file.talos_image.id
     interface    = "virtio0"
     iothread     = true
     discard      = "on"
